@@ -1,5 +1,5 @@
 package com.niuchaoqun.example.hbase;
 
-public class PutExample {
+public class Example {
 
 }
