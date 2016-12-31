@@ -41,11 +41,11 @@ public class MySQLSimpleExample {
 			e.printStackTrace();
 		}
 
-		try {
-			Class.forName(mysql_driver);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Class.forName(mysql_driver);
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
 		try {
 			connection = DriverManager.getConnection(mysql_url, mysql_user, mysql_password);
 			connection.close();

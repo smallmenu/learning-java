@@ -9,7 +9,7 @@ import com.niuchaoqun.example.pattern.Pattern;
 public class Example {
 	public static void main(String[] args) {
 		// just for debug
-		String[] argv = {"database", "redis"};args = argv;
+		String[] argv = {"advance", "hanlp"};args = argv;
 		
 		if (args.length < 2) {
 			System.err.println("Usage: example sub-example");

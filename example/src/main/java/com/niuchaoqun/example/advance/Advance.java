@@ -5,6 +5,7 @@ import com.niuchaoqun.example.advance.FastjsonExample;
 import com.niuchaoqun.example.advance.GsonExample;
 import com.niuchaoqun.example.advance.HashExample;
 import com.niuchaoqun.example.advance.Slf4jExample;
+import com.niuchaoqun.example.advance.HanlpExample;
 
 
 public class Advance {
@@ -16,6 +17,7 @@ public class Advance {
 			pd.addClass("gson", GsonExample.class, "gson example");
 			pd.addClass("hash", HashExample.class, "hash example");
 			pd.addClass("slf4j", Slf4jExample.class, "slf4j example");
+			pd.addClass("hanlp", HanlpExample.class, "hanlp example");
 
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {
