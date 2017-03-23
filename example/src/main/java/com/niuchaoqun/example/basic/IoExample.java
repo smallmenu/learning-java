@@ -3,10 +3,12 @@ package com.niuchaoqun.example.basic;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +25,7 @@ public class IoExample {
 		listDir();
 		fileStream();
 		rwStream();
+		print();
 	}
 
 	public static void file() {
@@ -55,10 +58,9 @@ public class IoExample {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
-	// 列出文件下所有文件
+	// 列出目录下所有文件
 	public static void listDir() {
 		File dir = new File(dirPath);
 		prints(dir);
@@ -162,5 +164,23 @@ public class IoExample {
 			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(str);
 			System.out.println(date);
 		}
+	}
+	
+	public static void print() {
+		PrintStream ps = null;
+		try {
+			ps = new PrintStream(new FileOutputStream(new File(dirPath + DS + "print.txt")));
+			
+			ps.println("print");
+			ps.println("helloworld");
+			ps.close();
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
 	}
 }

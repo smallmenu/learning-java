@@ -130,7 +130,7 @@ public class SyntaxExample {
 		System.out.println(regx3);
 		System.out.println("=====");
 
-		// 
+		// 字符串matches支持正则，仅用于是否匹配
 		String source1 = "2015-02-03";
 		boolean match = source1.matches("\\d{4}-\\d{2}-\\d{2}");
 		System.out.println(match);

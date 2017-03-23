@@ -49,9 +49,11 @@ public class CollectionExample {
 		}
 		System.out.println("=====");
 
+		// toArray方法可以将集合变为数组，但是类集声明时已经通过泛型制定了集合的类型。所以
+		// 接收时要使用泛型制定的类型
 		Object[] objAry = stringList.toArray();
 		for (int i = 0; i < objAry.length; i++) {
-			System.out.println(objAry[i]);
+			System.out.println((String)objAry[i]);
 		}
 		String[] strAry = stringList.toArray(new String[] {});
 		for (int i = 0; i < strAry.length; i++) {
@@ -69,8 +71,9 @@ public class CollectionExample {
 			}
 		}
 		System.out.println(stringList);
+		
 		ListIterator<String> listIterator = stringList.listIterator();
-		// 若实现从后向前输出，首先得从先向后输出
+		// ListIterator若实现从后向前输出，首先得从先向后输出
 		while (listIterator.hasPrevious()) {
 			String string = listIterator.previous();
 			System.out.println(string);
@@ -123,6 +126,7 @@ public class CollectionExample {
 	}
 
 	public static void set() {
+		// 集合是不允许加入重复的元素，如果集合的泛型是Object，那么需要覆写equals()和hashCode()方法
 		// 集合
 		HashSet<String> hashSet = new HashSet<String>();
 		hashSet.add("D");
