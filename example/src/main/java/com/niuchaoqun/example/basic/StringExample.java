@@ -38,7 +38,7 @@ public class StringExample {
 		
 		System.out.println("=====");
 		
-		// StringBuilder 功能与 StringBuffer类似，不支持多线程性能更好
+		// StringBuilder 功能与 StringBuffer 类似，但是不支持多线程所以性能更好
 		StringBuilderExample();
 	}
 	
