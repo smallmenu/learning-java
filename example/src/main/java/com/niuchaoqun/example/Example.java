@@ -11,7 +11,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"common", "lang"};
+        String[] argv = {"basic", "date8"};
         args = argv;
 
         if (args.length < 2) {

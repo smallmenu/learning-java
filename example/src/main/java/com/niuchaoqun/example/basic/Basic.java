@@ -22,6 +22,7 @@ public class Basic {
 			pd.addClass("string", StringExample.class, "string example");
 			pd.addClass("collection", CollectionExample.class, "collection example");
 			pd.addClass("date", DateExample.class, "date example");
+			pd.addClass("date8", Date8Example.class, "date example");
 			pd.addClass("io", IoExample.class, "io example");
 			pd.addClass("properties", PropertiesExample.class, "properties example");
 			pd.addClass("net", NetExample.class, "net example");

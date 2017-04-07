@@ -23,12 +23,10 @@ public class DateExample {
 		 * Date 中的相应方法已废弃
 		 */
 		Date date = new Date();
-		date.getTime();
-		System.out.println(date.getYear() + 1900);
 		
 		// Calendar
 		Calendar calendar = new GregorianCalendar();
-		System.out.println(calendar.get(calendar.YEAR));
+		System.out.println(calendar.get(calendar.YEAR)); // 2017
 		
 		DateFormat df1 = DateFormat.getInstance();
 		DateFormat df2 = DateFormat.getDateInstance();
