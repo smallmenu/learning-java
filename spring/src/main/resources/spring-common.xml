@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="OutputHelper" class="com.niuchaoqun.output.OutputHelper">
+        <property name="outputGenerator" ref="CsvOutputGenerator"/>
+    </bean>
+
+    <bean id="CsvOutputGenerator" class="com.niuchaoqun.output.CsvOutputGenerator"/>
+    <bean id="JsonOutputGenerator" class="com.niuchaoqun.output.JsonOutputGenerator"/>
+
+    <bean id="FileNameGenerator" class="com.niuchaoqun.xml.FileNameGenerator"
+          p:name="ncq" p:type="txt"/>
+
+    <bean id="SingleService" class="com.niuchaoqun.xml.SingleService" scope="prototype"/>
+
+    <bean id="Customer" class="com.niuchaoqun.xml.Customer">
+        <constructor-arg type="java.lang.String">
+            <value>mkyong</value>
+        </constructor-arg>
+
+        <constructor-arg type="int">
+            <value>28</value>
+        </constructor-arg>
+
+        <constructor-arg type="java.lang.String">
+            <value>188</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="CustomerService" class="com.niuchaoqun.xml.CustomerService">
+        <property name="name" value="Yong Mook Kim"/>
+        <property name="url" value="http://www.mkyong.com"/>
+    </bean>
+
+    <context:component-scan base-package="com.niuchaoqun.xml" />
+</beans>
