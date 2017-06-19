@@ -8,6 +8,7 @@ public class Common {
         ExampleDriver pd = new ExampleDriver();
         try {
             pd.addClass("lang", LangExample.class, "lang3 example");
+            pd.addClass("io", IoExample.class, "io example");
 
             exitCode = pd.run(args, 1);
         } catch (Throwable e) {

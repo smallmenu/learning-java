@@ -30,7 +30,8 @@ public class Basic {
 			pd.addClass("runtime", RuntimeExample.class, "runtime example");
 			pd.addClass("system", SystemExample.class, "system example");
 			pd.addClass("array", ArrayExample.class, "array example");
-			
+			pd.addClass("math", MathExample.class, "math example");
+
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {
 			e.printStackTrace();

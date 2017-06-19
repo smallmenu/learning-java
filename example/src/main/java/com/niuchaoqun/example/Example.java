@@ -6,17 +6,24 @@ import com.niuchaoqun.example.basic.Basic;
 import com.niuchaoqun.example.common.Common;
 import com.niuchaoqun.example.database.Database;
 import com.niuchaoqun.example.pattern.Pattern;
+import org.apache.commons.lang3.ArrayUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Example {
 
+    private static final Logger log = LoggerFactory.getLogger(Example.class);
+
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"basic", "date8"};
+        String[] argv = {"basic", "math"};
         args = argv;
 
         if (args.length < 2) {
             System.err.println("Usage: example sub-example");
         }
+
+        log.info(ArrayUtils.toString(args));
 
         int exitCode = -1;
         ExampleDriver pd = new ExampleDriver();

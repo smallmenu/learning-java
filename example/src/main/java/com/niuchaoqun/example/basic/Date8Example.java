@@ -35,7 +35,6 @@ public class Date8Example {
         LocalDateTime pdt = LocalDateTime.parse(dt, DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒"));
         System.out.println(pdt);
         System.out.println(pdt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-
         System.out.println("====");
 
         // 获取时间戳，单位是毫秒
