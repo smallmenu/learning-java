@@ -22,7 +22,7 @@ public class PropertiesExample {
 		properties.list(System.out);
 
 		// 保存
-		File output = new File("test.properties");
+		File output = new File("data/test.properties");
 		try {
 			properties.store(new FileOutputStream(output), "Comment");
 		} catch (FileNotFoundException e) {
@@ -33,7 +33,7 @@ public class PropertiesExample {
 
 		// 读取
 		Properties loadProperties = new Properties();
-		File input = new File("test.properties");
+		File input = new File("data/test.properties");
 		try {
 			loadProperties.load(new FileInputStream(input));
 			System.out.println(loadProperties);

@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-public class MySQLSimpleExample {
+public class MySQLExample {
 
 	private static Connection connection = null;
 	private static Properties properties = new Properties();

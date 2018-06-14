@@ -3,72 +3,130 @@ package com.niuchaoqun.example.basic;
 public class StringExample {
 	
 	public static void run(String[] args) {
+		string();
+		empty();
+		function();
 		StringBufferExample();
 		StringBuilderExample();
+	}
+
+	public static void string() {
+		// String 匿名对象，创建了字符串name在字符串池中，string1与string2都是对该字符串的引用
+		String string1 = "name";
+		String string2 = "name";
+		// String 对象
+		String string3 = new String("Name");
+
+		String string4 = string3;
+		System.out.println(string1 == string2);
+		System.out.println(string1 == string3);
+		System.out.println(string3 == string4);
+		System.out.println(string1.equals(string3));
+		System.out.println(string1.equalsIgnoreCase(string3));
+
+		// 判断是否等于字符串更严谨的写法，可避免空指针异常
+		System.out.println("name".equals(string3));
+		System.out.println("----- string -----");
+	}
+
+	public static void function() {
+		String string1 = "hello";
+		String string2 = "world";
+		String string3 = "hello，中国.";
+
+		// trim
+		System.out.println(" adsf ".trim());
+
+		// string1 > string2 是负值
+		int compare = string1.compareTo(string2);
+		System.out.println(compare);
+
+		// 字符串连接
+		String concat = string1.concat(string2);
+		System.out.println(concat);
+
+ 		// 前缀后缀匹配
+		System.out.println(string1.startsWith("h"));
+		System.out.println(string2.endsWith("ld"));
+
+		// 返回子串
+		String substring = string1.substring(1, 3);
+		System.out.println(substring);
+
+		// 静态方法，返回字符串表示
+		String valueof = String.valueOf(123456.12);
+		System.out.println(valueof);
+
+		// 字符串查找
+		int indexOf = string1.indexOf("ll");
+		System.out.println(indexOf);
+
+		// 字符串长度，中英文长度和标点都是1
+		int length1 = string1.length();
+		int length2 = string3.length();
+		System.out.println(length1);
+		System.out.println(length2);
+
+		// 替换
+		String replace = string1.replace("h", "o");
+		System.out.println(replace);
+
+		// 转换大写
+		System.out.println(string1.toUpperCase());
+
+		System.out.println("----- function -----");
+	}
+
+	public static void empty() {
+		String string1 = "abc";
+
+		// 判断空。检查字符串长度，等价于 "".equals，但可能有空指针异常。
+		boolean empty = string1.isEmpty();
+		System.out.println(empty);
+
+		// 判断空。"".equals() 能避免空指针异常错误，但是使用时依然要判断是否为null
+		String nullString = null;
+		if (! "".equals(nullString)) {
+			// 条件通过，但空指针异常
+			//if (nullString.endsWith("c")) {
+			//	System.out.println(nullString);
+			//}
+		}
+
+		// 更严谨的判断
+		// 这样判断有点狗屎，可以借助 StringUtils.isEmpty() 与 StringUtils.equals(a, "") 简化
+		if (nullString != null && !"".equals(nullString)) {
+			if (nullString.endsWith("c")) {
+				System.out.println(nullString);
+			}
+		}
+
+		System.out.println("----- empty -----");
 	}
 
 	public static void StringBufferExample() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Hello");
-		buffer.insert(buffer.length(), " World");
-
-		StringBuffer buffer2 = new StringBuffer();
-		buffer2.append("Hello中文");
-		System.out.println(buffer);
-		System.out.println(buffer2);
-
-		// length 
-		System.out.println(buffer.length());
-		System.out.println(buffer2.length());
-
-		// indexOf
-		System.out.println(buffer2.indexOf("中"));
-
-		// replace
-		buffer.replace(0, 5, "XXXXX");
+		buffer.append("World");
 		System.out.println(buffer);
 
-		// substring
-		String substring = buffer.substring(0, 5);
-		System.out.println(substring);
+		// 任意位置插入
+		buffer.insert(1, "-INSERT-");
+		System.out.println(buffer);
 
-		// reverse
+		// 特有方法，反转字符串
 		String reverse = buffer.reverse().toString();
 		System.out.println(reverse);
 		
-		System.out.println("=====");
-		
-		// StringBuilder 功能与 StringBuffer 类似，但是不支持多线程所以性能更好
-		StringBuilderExample();
+		System.out.println("----- StringBuffer -----");
 	}
 	
 	public static void StringBuilderExample() {
+		// StringBuilder 功能与 StringBuffer 类似，但是不支持多线程所以性能更好
 		StringBuilder builder = new StringBuilder();
 		builder.append("Hello");
-		builder.insert(builder.length(), " World");
-
-		StringBuffer builder2 = new StringBuffer();
-		builder2.append("Hello中文");
-		System.out.println(builder);
-		System.out.println(builder2);
-
-		// length 
-		System.out.println(builder.length());
-		System.out.println(builder2.length());
-
-		// indexOf
-		System.out.println(builder2.indexOf("中"));
-
-		// replace
-		builder.replace(0, 5, "XXXXX");
 		System.out.println(builder);
 
-		// substring
-		String substring = builder.substring(0, 5);
-		System.out.println(substring);
-
-		// reverse
-		String reverse = builder.reverse().toString();
-		System.out.println(reverse);
+		System.out.println("----- StringBuilder -----");
 	}
 }

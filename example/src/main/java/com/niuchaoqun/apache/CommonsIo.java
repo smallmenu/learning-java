@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.common;
+package com.niuchaoqun.apache;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -9,13 +9,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class IoExample {
+public class CommonsIo {
     private static String url = "http://www.baidu.com";
     private static String userDir = System.getProperties().getProperty("user.dir");
     private static String DS = File.separator;
     private static String dirPath = userDir + DS + "data";
 
-    public static void run(String[] args) {
+    public static void main(String[] args) {
         url();
         file();
         filename();
@@ -28,7 +28,7 @@ public class IoExample {
             in = new URL(url).openStream();
             System.out.println(IOUtils.toString(in));
 
-            URL url = new URL(IoExample.url);
+            URL url = new URL(CommonsIo.url);
 
             FileUtils.copyURLToFile(url, file);
 

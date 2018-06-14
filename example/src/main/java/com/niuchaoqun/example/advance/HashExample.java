@@ -2,7 +2,6 @@ package com.niuchaoqun.example.advance;
 
 import com.niuchaoqun.utils.Hash;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.DigestUtils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -18,9 +17,7 @@ public class HashExample {
 
     public static void run(String[] args) {
         md5();
-        commonMd5();
         sha();
-        commonSha();
         base64();
         commonBase64();
         url();
@@ -36,11 +33,6 @@ public class HashExample {
         System.out.println(md5);
     }
 
-    public static void commonMd5() {
-        String md5 = DigestUtils.md5Hex(source);
-        System.out.println(md5);
-    }
-
     public static void sha() {
         String sha1 = null;
         String sha256 = null;
@@ -50,13 +42,6 @@ public class HashExample {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        System.out.println(sha1);
-        System.out.println(sha256);
-    }
-
-    public static void commonSha() {
-        String sha1 = DigestUtils.sha1Hex(source);
-        String sha256 = DigestUtils.sha256Hex(source);
         System.out.println(sha1);
         System.out.println(sha256);
     }

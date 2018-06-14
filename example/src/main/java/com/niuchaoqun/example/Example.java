@@ -2,10 +2,10 @@ package com.niuchaoqun.example;
 
 import com.niuchaoqun.driver.ExampleDriver;
 import com.niuchaoqun.example.advance.Advance;
+import com.niuchaoqun.example.algorithm.Algorithm;
 import com.niuchaoqun.example.basic.Basic;
-import com.niuchaoqun.example.common.Common;
 import com.niuchaoqun.example.database.Database;
-import com.niuchaoqun.example.pattern.Pattern;
+import com.niuchaoqun.example.jdk.Jdk;
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"basic", "math"};
+        String[] argv = {"jdk", "date8"};
         args = argv;
 
         if (args.length < 2) {
@@ -29,12 +29,11 @@ public class Example {
         ExampleDriver pd = new ExampleDriver();
 
         try {
-            pd.addClass("basic", Basic.class, "basic example group: such as syntax, string, date, io etc. ");
-            pd.addClass("advance", Advance.class, "advance example group: such as thread, json, slf4j etc. ");
-            pd.addClass("database", Database.class, "database example group: such as mysql, redis etc. ");
-            pd.addClass("pattern", Pattern.class, "pattern example group: such singleton etc. ");
-            pd.addClass("common", Common.class, "apache common example group: such lang3 etc. ");
-
+            pd.addClass("basic", Basic.class, "basic example:");
+            pd.addClass("jdk", Jdk.class, "jdk example:");
+            pd.addClass("algorithm", Algorithm.class, "algorithm example:");
+            pd.addClass("advance", Advance.class, "advance group:");
+            pd.addClass("database", Database.class, "database example: such as mysql, redis etc. ");
             exitCode = pd.run(args, 0);
         } catch (Throwable e) {
             e.printStackTrace();
