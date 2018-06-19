@@ -1,4 +1,4 @@
-package com.niuchaoqun.apache;
+package com.niuchaoqun.example.apache;
 
 
 import org.apache.commons.codec.EncoderException;
@@ -13,7 +13,7 @@ public class CommonsCodec {
 
     private static String source = "hello，中国";
 
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         md5();
         sha();
         base64();

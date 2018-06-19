@@ -42,14 +42,17 @@ public class ArrayExample {
 		int[] map = new int[5];
  	    int array1[] = {3,5,7,9,1,2,6,8};
 
- 	    // Arrays.toString对带null输出的null，可以使用common-lang中ArrayUtils替代
-        int[] nullArray = null;
-        System.out.println(Arrays.toString(nullArray));
-        System.out.println(ArrayUtils.toString(nullArray));
+ 	    // Arrays.toString 中括号表示，ArrayUtils 大括号表示
+ 	    System.out.println(Arrays.toString(array1));
+		System.out.println(ArrayUtils.toString(array1));
+
+ 	    // Arrays.toString 对 null 输出的 null，ArrayUtils 会输出空串
+        int[] nullArray1 = null;
+        System.out.println(Arrays.toString(nullArray1));
+        System.out.println(ArrayUtils.toString(nullArray1));
 
  	    // 填充
  	    Arrays.fill(map, 2);
-        System.out.println(Arrays.toString(map));
         System.out.println(ArrayUtils.toString(map));
 
         // 复制

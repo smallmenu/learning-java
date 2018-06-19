@@ -28,39 +28,30 @@ public class RandomExample {
         }
         System.out.println("----- Random2 -----");
 
-
-        // 加强型的随机数，还可以通过特定的算法初始化
-        SecureRandom random3 = new SecureRandom();
+        // 使用seed初始化
+        Random random3 = new Random(seed);
         for (int i = 0; i < 10; i++) {
             System.out.println(random3.nextInt(1000));
         }
+        System.out.println("----- Random3 -----");
+
+
+        // 加强型的随机数，buke还可以通过特定的算法初始化
+        SecureRandom random4 = new SecureRandom();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(random4.nextInt(1000));
+        }
         System.out.println("----- SecureRandom1 -----");
 
-        SecureRandom random4 = null;
+        SecureRandom random5 = null;
         try {
-            random4 = SecureRandom.getInstance("SHA1PRNG");
+            random5 = SecureRandom.getInstance("SHA1PRNG");
             for (int i = 0; i < 10; i++) {
-                System.out.println(random4.nextInt(1000));
+                System.out.println(random5.nextInt(1000));
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
         System.out.println("----- SecureRandom2 -----");
-
-    }
-
-    public static void example() {
-
-        // 格式化
-//		NumberFormat numberFormat1 = NumberFormat.getInstance();
-//		System.out.println(numberFormat1.format(1234567890));
-//		System.out.println(numberFormat1.format(12345.67890));
-//		System.out.println("=====");
-//
-//		// 自定义格式化
-//		System.out.println(new DecimalFormat("###,###,###.##").format(123456789));
-//		System.out.println(new DecimalFormat("###,###,###.#").format(1234567.89));
-//		System.out.println(new DecimalFormat("$###,###,###.#").format(123456789));
-//		System.out.println(new DecimalFormat("###,###,###.##%").format(0.0345));
     }
 }

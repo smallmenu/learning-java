@@ -16,7 +16,7 @@ public class SetExample {
         // 集合
         // 是不允许加入重复的元素，如果集合的泛型是Object，那么需要覆写equals()和hashCode()方法
         // 不保证迭代顺序
-        HashSet<String> hashSet = new HashSet<String>();
+        HashSet<String> hashSet = new HashSet<>();
         hashSet.add("D");
         hashSet.add("B");
         hashSet.add("A");
@@ -40,7 +40,7 @@ public class SetExample {
         System.out.println(linkedHashSet);
 
         // 有序集合，如果容器内是泛型的Object，那么需要自己实现 Comparable 接口
-        TreeSet<String> treeSet = new TreeSet<String>();
+        TreeSet<String> treeSet = new TreeSet<>();
         treeSet.add("C");
         treeSet.add("A");
         treeSet.add("B");

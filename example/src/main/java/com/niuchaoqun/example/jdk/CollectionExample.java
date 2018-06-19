@@ -13,13 +13,17 @@ public class CollectionExample {
 
     public static void collections() {
         // 给集合批量添加数据
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<>();
         Collections.addAll(arrayList, "Hello", "World", "Java");
         System.out.println(arrayList);
 
         // 另一种方法
         List<String> lists =  Arrays.asList("test1", "test2", "test3");
         ArrayList<String> strings = new ArrayList<>(lists);
+        System.out.println(strings);
+
+        // 交换
+        Collections.swap(strings, 0, 1);
         System.out.println(strings);
 
         // 反转集合
@@ -30,7 +34,7 @@ public class CollectionExample {
         Collections.sort(arrayList);
         System.out.println(arrayList);
 
-        // 二分查找
+        // 二分查找，返回索引值
         int index = Collections.binarySearch(arrayList, "World");
         System.out.println(index);
 
@@ -38,8 +42,8 @@ public class CollectionExample {
         Collections.replaceAll(arrayList, "Java", "PHP");
         System.out.println(arrayList);
 
-        // 来自一个面试题，展示一下shuffle方法
-        ArrayList<Integer> numbers = new ArrayList<Integer>(100);
+        // 来自一个面试题，展示一下shuffle方法，随机排列
+        ArrayList<Integer> numbers = new ArrayList<>(100);
         for (int i = 1; i <= 100; i++) {
             numbers.add(i);
         }

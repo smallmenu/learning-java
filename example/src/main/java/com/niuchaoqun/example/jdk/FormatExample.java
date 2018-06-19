@@ -30,7 +30,7 @@ public class FormatExample {
     }
 
     public static void decimalFormat() {
-        System.out.println(new DecimalFormat("###,###.###").format(123456789));
+        System.out.println(new DecimalFormat("###,###.###").format(123456789.23456));
 
     }
 }

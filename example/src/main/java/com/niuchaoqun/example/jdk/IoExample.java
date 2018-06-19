@@ -12,6 +12,7 @@ public class IoExample {
     private final static String DS = File.separator;
 
     private final static String userDir = System.getProperties().getProperty("user.dir");
+
     private final static String dirPath = userDir + DS + "data";
 
     public static void run(String[] args) {

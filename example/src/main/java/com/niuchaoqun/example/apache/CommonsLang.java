@@ -1,4 +1,4 @@
-package com.niuchaoqun.apache;
+package com.niuchaoqun.example.apache;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -14,7 +14,7 @@ public class CommonsLang {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         arrayUtil();
         stringUtil();
         numberUtil();

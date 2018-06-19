@@ -14,12 +14,12 @@ public class MapExample {
     /**
      * Hash表的实现，最好能预估容量
      * 默认Hash桶是16，当数量达到桶数量75%时，hash冲突比较严重，会成倍扩容，并重新分配所有原来的数据
-     * 当产生hash冲突时，JDK是使用链表法，JDK8新增一个默认8的阈值，超过阈值转换成红黑树
+     * 当产生hash冲突时，JDK是使用链表法，JDK8新增一个为默认8的阈值，当超过阈值转换成红黑树
      * HashMap数据是乱序的
      */
     public static void hashmap() {
         // HashMap为新的操作类，HashTable 是旧的操作类，HashTable性能低但线程安全
-        HashMap<String, String> hashMap = new HashMap<String, String>();
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("key1", "value1");
         hashMap.put("key2", "value2");
         hashMap.put("key3", "value3");
@@ -37,6 +37,7 @@ public class MapExample {
         for (String value : values) {
             System.out.println(value);
         }
+
         // 遍历所有的key和value
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
@@ -48,7 +49,7 @@ public class MapExample {
 
     public static void hashmap_function () {
         // 初始容量
-        HashMap<String, String> hashMap = new HashMap<String, String>(100);
+        HashMap<String, String> hashMap = new HashMap<>(100);
         hashMap.put("key1", "value1");
         hashMap.put("key2", "value2");
         hashMap.put("key3", "value3");
@@ -75,7 +76,7 @@ public class MapExample {
      */
     public static void treemap() {
         // 有序Map，基于红黑树实现自动排序的Map，并且提供一些比较方法
-        TreeMap<String, String> treeMap = new TreeMap<String, String>();
+        TreeMap<String, String> treeMap = new TreeMap<>();
         treeMap.put("k1", "value1");
         treeMap.put("k2", "value2");
         treeMap.put("k3", "value3");
@@ -105,13 +106,13 @@ public class MapExample {
 
     public static void linkedHashMap() {
         // LinkedHashMap 维护了一个双链表，定义了迭代顺序，即插入顺序
-        HashMap<String, String> hashmap = new HashMap<String, String>();
-
+        HashMap<String, String> hashmap = new HashMap<>();
 
         hashmap.put("key2", "value2");
         hashmap.put("key1", "value1");
         hashmap.put("key3", "value3");
         hashmap.put("key4", "value4");
+
         for (Map.Entry<String, String> entry : hashmap.entrySet()) {
             System.out.println(entry.getKey());
         }

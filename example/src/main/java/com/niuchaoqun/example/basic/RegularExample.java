@@ -13,7 +13,7 @@ public class RegularExample {
     }
 
     public static void string() {
-        // split 支持正则
+        // split 支持正则表达式
         String string1 = "abcd,efg,hij";
         String[] split1 = string1.split(",");
         System.out.println(Arrays.toString(split1));

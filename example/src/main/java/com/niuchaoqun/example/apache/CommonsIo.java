@@ -1,4 +1,4 @@
-package com.niuchaoqun.apache;
+package com.niuchaoqun.example.apache;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -15,7 +15,7 @@ public class CommonsIo {
     private static String DS = File.separator;
     private static String dirPath = userDir + DS + "data";
 
-    public static void main(String[] args) {
+    public static void run(String[] args) {
         url();
         file();
         filename();
