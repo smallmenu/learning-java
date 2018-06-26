@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.basic;
+package com.niuchaoqun.example.thread;
 
 public class Thread1Example {
     public static void run(String[] args) {
@@ -24,6 +24,7 @@ public class Thread1Example {
         // 继承 Thread 类
         for (int i = 0; i < 100; i++) {
             ExtendThread extendThread = new ExtendThread();
+            extendThread.setName("e" + i);
             extendThread.start();
         }
 

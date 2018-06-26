@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.basic;
+package com.niuchaoqun.example.thread;
 
 public class Thread2Example {
     public static void run(String[] args) {
@@ -16,7 +16,7 @@ public class Thread2Example {
         }
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -51,6 +51,8 @@ public class Thread2Example {
             counter++;
             System.out.println(counter + ":RunnableThread:" + Thread.currentThread().getName() + " running");
 
+            // 按照理解，未加锁多线程运行应该会出现负值，实际可能没出现
+            // 原因是因为 CPU 运行太快了，可见 Thread3Example
             for (int i = 0; i < 10; i++) {
                 if (ticket > 0) {
                     System.out.println("runnable ticket=" + ticket--);

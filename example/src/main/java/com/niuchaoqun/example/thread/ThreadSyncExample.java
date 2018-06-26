@@ -1,6 +1,6 @@
-package com.niuchaoqun.example.basic;
+package com.niuchaoqun.example.thread;
 
-public class Thread3Example {
+public class ThreadSyncExample {
     public static void run(String[] args) {
         Runnable runnable = new RunnableThread();
         for (int i = 0; i < 10; i++) {

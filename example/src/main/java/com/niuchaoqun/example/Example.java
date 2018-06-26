@@ -7,6 +7,7 @@ import com.niuchaoqun.example.apache.Apache;
 import com.niuchaoqun.example.basic.Basic;
 import com.niuchaoqun.example.database.Database;
 import com.niuchaoqun.example.jdk.Jdk;
+import com.niuchaoqun.example.thread.Threads;
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"jdk", "format"};
+        String[] argv = {"thread", "threadwaitnotify"};
         args = argv;
 
         if (args.length < 2) {
@@ -31,6 +32,7 @@ public class Example {
 
         try {
             pd.addClass("basic", Basic.class, "basic example:");
+            pd.addClass("thread", Threads.class, "thread example:");
             pd.addClass("jdk", Jdk.class, "jdk example:");
             pd.addClass("advance", Advance.class, "advance group:");
             pd.addClass("algorithm", Algorithm.class, "algorithm example:");

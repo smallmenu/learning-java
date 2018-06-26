@@ -16,9 +16,6 @@ public class Basic {
 			pd.addClass("random", RandomExample.class, "random and number example");
 			pd.addClass("runtime", RuntimeExample.class, "runtime example");
 			pd.addClass("system", SystemExample.class, "system example");
-			pd.addClass("thread1", Thread1Example.class, "thread example");
-			pd.addClass("thread2", Thread2Example.class, "thread example");
-			pd.addClass("thread3", Thread3Example.class, "thread example");
 
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {
