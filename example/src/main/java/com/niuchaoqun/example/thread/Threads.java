@@ -13,6 +13,7 @@ public class Threads {
             pd.addClass("threadstate", ThreadStateExample.class, "thread state example");
             pd.addClass("threadshutdown", ThreadShutdownExample.class, "thread state example");
             pd.addClass("threadwaitnotify", ThreadWaitNotifyExample.class, "thread state example");
+            pd.addClass("threadconnectionpool", ThreadConnectionPoolExample.class, "thread state example");
 
             exitCode = pd.run(args, 1);
         } catch (Throwable e) {

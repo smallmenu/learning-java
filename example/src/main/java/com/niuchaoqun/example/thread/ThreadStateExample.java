@@ -41,6 +41,7 @@ public class ThreadStateExample {
     /**
      * WAITING 状态，表示等待状态
      * 表示该线程进入等待状态，需要等待其他线程做出特定动作（通知或中断）
+     * 使用 wait() 必须先获取锁
      */
     static class Waiting implements Runnable {
         @Override

@@ -1,5 +1,8 @@
 package com.niuchaoqun.example.thread;
 
+/**
+ * Java 实现多线程编程
+ */
 public class Thread1Example {
     public static void run(String[] args) {
         // 获取当前线程名称
@@ -12,7 +15,7 @@ public class Thread1Example {
         extendThread();
         runnableThread();
 
-        // 多线程模式下，主线程可能没有等待多线程执行完毕就会结束
+        // 多线程模式下，主线程可能没有等待多线程执行完毕就会结束，所以看不到 print 结果
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
