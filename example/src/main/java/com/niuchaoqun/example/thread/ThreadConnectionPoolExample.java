@@ -4,15 +4,19 @@ import com.niuchaoqun.example.thread.cp.ConnectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 一个简单的具有获取连接等待超时的数据库连接池
  *
+ * CountDownLatch 允许一个或多个线程等待其他线程完成操作，
  *
- * CountDownLatch 可以实现类似计数器的功能
- * 构造函数 new CountDownLatch(1)
+ * 构造函数 new CountDownLatch(count)，接收一个int类型的参数作为计数器，如果你想等待N个点完成，这里就传入N
+ * .countDown() 调用时，N 会 -1
+ * .awit() 会阻塞当前线程，直到 N 变为 0
  *
  */
 public class ThreadConnectionPoolExample {
@@ -22,7 +26,7 @@ public class ThreadConnectionPoolExample {
     // 保证所有 ConnectionRunner 线程能够同时开始
     static CountDownLatch start = new CountDownLatch(1);
 
-    // main线程将会等待所有 ConnectionRunner 结束后才能继续执行
+    // main 线程将会等待所有 ConnectionRunner 结束后才能继续执行
     static CountDownLatch end;
 
     public static void run(String[] args) {
@@ -30,7 +34,6 @@ public class ThreadConnectionPoolExample {
         int threadCount = 50;
         // 每个线程从连接池中获取连接总次数
         int count = 20;
-
         end = new CountDownLatch(threadCount);
 
         AtomicInteger got = new AtomicInteger();
@@ -40,8 +43,11 @@ public class ThreadConnectionPoolExample {
             Thread thread = new Thread(new ConnectionRunner(count, got, notGot), "ConnectionRunnerThread");
             thread.start();
         }
+        // 所有线程同一时刻运行
         start.countDown();
+
         try {
+            // 先阻塞在这里，直到所有线程执行完毕，即 end 的 count = 0
             end.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -69,7 +75,7 @@ public class ThreadConnectionPoolExample {
 
         @Override
         public void run() {
-
+            // 每个线程执行 start() 之后，先阻塞在这里，待所有线程执行完 start() 以后，一起往下执行
             try {
                 start.await();
             } catch (InterruptedException e) {
@@ -101,6 +107,7 @@ public class ThreadConnectionPoolExample {
                 }
 
             }
+            // 执行完一个线程后，减少一次计数
             end.countDown();
         }
     }
