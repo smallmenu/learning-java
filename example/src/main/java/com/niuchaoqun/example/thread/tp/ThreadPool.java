@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.thread.threadpool;
+package com.niuchaoqun.example.thread.tp;
 
 public interface ThreadPool<Job extends Runnable> {
     // 执行一个Job，这个Job需要实现 Runnable

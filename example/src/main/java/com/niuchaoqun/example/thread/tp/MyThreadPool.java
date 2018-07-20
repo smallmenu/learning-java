@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.thread.threadpool;
+package com.niuchaoqun.example.thread.tp;
 
 import java.util.ArrayList;
 import java.util.Collections;

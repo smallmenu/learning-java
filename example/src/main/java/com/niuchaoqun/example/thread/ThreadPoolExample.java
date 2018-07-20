@@ -1,6 +1,6 @@
 package com.niuchaoqun.example.thread;
 
-import com.niuchaoqun.example.thread.threadpool.MyThreadPool;
+import com.niuchaoqun.example.thread.tp.MyThreadPool;
 
 import java.util.concurrent.CountDownLatch;
 

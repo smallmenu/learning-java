@@ -1,6 +1,6 @@
 package com.niuchaoqun.example.thread;
 
-import com.niuchaoqun.example.thread.connectionpool.ConnectionPool;
+import com.niuchaoqun.example.thread.cp.ConnectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
