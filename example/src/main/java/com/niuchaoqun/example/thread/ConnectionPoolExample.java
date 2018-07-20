@@ -1,11 +1,9 @@
 package com.niuchaoqun.example.thread;
 
-import com.niuchaoqun.example.thread.cp.ConnectionPool;
+import com.niuchaoqun.example.thread.connectionpool.ConnectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -19,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * .awit() 会阻塞当前线程，直到 N 变为 0
  *
  */
-public class ThreadConnectionPoolExample {
+public class ConnectionPoolExample {
     // 初始化具有10个连接的连接池
     static ConnectionPool pool = new ConnectionPool(10);
 
@@ -75,7 +73,7 @@ public class ThreadConnectionPoolExample {
 
         @Override
         public void run() {
-            // 每个线程执行 start() 之后，先阻塞在这里，待所有线程执行完 start() 以后，一起往下执行
+            // 每个线程执行 start() 之后，先阻塞在这里，待所有线程都执行完 start() 以后，一起往下执行
             try {
                 start.await();
             } catch (InterruptedException e) {

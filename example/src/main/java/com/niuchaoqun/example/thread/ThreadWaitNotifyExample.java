@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * 等待、通知机制
+ * 等待、通知机制（Guarded Suspension 模式）
  *
  * 等待wait()、通知notify()机制相关方法是任意 Java 对象都具备的
  *
- * 使用 wait()、notify() 时需要先对对象加锁，调用 wait() 后释放对象的锁
+ * 使用 wait()、notify() 时需要先对对象加锁，调用 wait() 后会释放对象的锁
  * notify() 时不会释放锁，会运行直到当前线程释放锁
  * notify() 时线程选择是不可靠的，和 wait 先后没有关系
- * 一般来说 notifyAll() 要更简装一些。
+ * 一般来说notify()唤醒的线程较少，处理速度和性能要快一些， 但 notifyAll() 要更健壮。
  *
  * 等待方遵循原则：
  * 1. 获取对象的锁

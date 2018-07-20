@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.thread.cp;
+package com.niuchaoqun.example.thread.connectionpool;
 
 import java.sql.Connection;
 import java.util.LinkedList;

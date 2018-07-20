@@ -1,4 +1,4 @@
-package com.niuchaoqun.example.thread.cp;
+package com.niuchaoqun.example.thread.connectionpool;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
