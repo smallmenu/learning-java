@@ -1,5 +1,8 @@
 package com.niuchaoqun.example.thread.pc;
 
+/**
+ * 基于 wait 和 notify 实现的 Table
+ */
 public class Table {
     private final String[] buffer;
     private int tail;

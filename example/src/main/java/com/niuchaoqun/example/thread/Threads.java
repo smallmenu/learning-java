@@ -17,6 +17,7 @@ public class Threads {
             pd.addClass("thread_pool", ThreadPoolExample.class, "thread pool example");
             pd.addClass("connection_pool", ConnectionPoolExample.class, "thread state example");
             pd.addClass("semaphore", SemaphoreExample.class, "thread semaphore example");
+            pd.addClass("producer_consumer", ProducerConsumer.class, "thread semaphore example");
 
             exitCode = pd.run(args, 1);
         } catch (Throwable e) {
