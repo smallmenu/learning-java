@@ -4,9 +4,13 @@ package com.niuchaoqun.example.thread.pc;
  * 基于 wait 和 notify 实现的 Table
  */
 public class Table {
+    // 缓冲区
     private final String[] buffer;
+    // 下次 put 的位置
     private int tail;
+    // 下次 take 的位置
     private int head;
+    // buffer中的个数
     private int count;
 
     public Table(int count) {
