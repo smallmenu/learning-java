@@ -9,18 +9,19 @@ public class Threads {
         try {
             pd.addClass("thread1", Thread1Example.class, "extend and interface");
             pd.addClass("thread2", Thread2Example.class, "extend and interface");
-            pd.addClass("threadlocal", ThreadLocalExample.class, "threadlocal example");
-            pd.addClass("thread_sync", ThreadSyncExample.class, "thread example，synchronized");
-            pd.addClass("thread_state", ThreadStateExample.class, "thread state example");
-            pd.addClass("thread_shutdown", ThreadShutdownExample.class, "thread state example");
+            pd.addClass("thread_pool", ExampleThreadPool.class, "thread pool example");
+            pd.addClass("connection_pool", ExampleConnectionPool.class, "thread state example");
+
+            pd.addClass("threadlocal", ExampleThreadLocal.class, "threadlocal example");
+            pd.addClass("thread_sync", ExampleThreadSync.class, "thread example，synchronized");
+            pd.addClass("thread_state", ExampleThreadState.class, "thread state example");
+            pd.addClass("thread_shutdown", ExampleThreadShutdown.class, "thread state example");
             pd.addClass("thread_waitnotify", ThreadWaitNotifyExample.class, "thread state example");
-            pd.addClass("thread_pool", ThreadPoolExample.class, "thread pool example");
-            pd.addClass("connection_pool", ConnectionPoolExample.class, "thread state example");
             pd.addClass("semaphore", SemaphoreExample.class, "thread semaphore example");
             pd.addClass("producer_consumer", ProducerConsumer.class, "thread semaphore example");
             pd.addClass("exchanger", ExchangerExample.class, "exchanger example");
             pd.addClass("read-write", ReadWrite.class, "readwrite lock example");
-            pd.addClass("thread-per-message", ThreadPerMessage.class, "thread per message example");
+            pd.addClass("thread-per-message", ThreadPerMessage2.class, "thread per message example");
             pd.addClass("worker-thread", WorkerThread.class, "worker-thread example");
 
             exitCode = pd.run(args, 1);

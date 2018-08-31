@@ -3,7 +3,7 @@ package com.niuchaoqun.example.thread;
 /**
  * 安全终止线程的两种方法
  */
-public class ThreadShutdownExample {
+public class ExampleThreadShutdown {
     public static void run(String[] args) {
         Runner one = new Runner();
         Thread countThread1 = new Thread(one, "CountThread");

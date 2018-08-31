@@ -6,7 +6,7 @@ package com.niuchaoqun.example.thread;
  * 以ThreaLocal为键，任意对象为值得存储结构，被附带在线程上
  * 一个线程可以根据一个 ThreadLocal 对象查询到
  */
-public class ThreadLocalExample {
+public class ExampleThreadLocal {
     private static final ThreadLocal<Long> TIME_THREADLOCAL = new ThreadLocal<Long>() {
         protected Long initialValue() {
             return System.currentTimeMillis();
@@ -22,7 +22,7 @@ public class ThreadLocalExample {
     }
 
     public static void run(String[] args) {
-        ThreadLocalExample.begin();
+        ExampleThreadLocal.begin();
 
         try {
             Thread.sleep(1000);
@@ -30,6 +30,6 @@ public class ThreadLocalExample {
             e.printStackTrace();
         }
 
-        System.out.println("Cost:" + ThreadLocalExample.end());
+        System.out.println("Cost:" + ExampleThreadLocal.end());
     }
 }

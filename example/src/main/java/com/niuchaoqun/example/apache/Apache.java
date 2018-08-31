@@ -1,7 +1,6 @@
 package com.niuchaoqun.example.apache;
 
 import com.niuchaoqun.driver.ExampleDriver;
-import com.niuchaoqun.example.algorithm.SortExample;
 
 public class Apache {
     public static void run(String[] args) {
@@ -11,6 +10,7 @@ public class Apache {
             pd.addClass("commons-lang", CommonsLang.class, "commons-lang example");
             pd.addClass("commons-io", CommonsIo.class, "commons-io example");
             pd.addClass("commons-codec", CommonsCodec.class, "commons-codec example");
+            pd.addClass("httpclient", Httpclient.class, "commons-codec example");
 
             exitCode = pd.run(args, 1);
         } catch (Throwable e) {

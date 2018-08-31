@@ -4,7 +4,7 @@ package com.niuchaoqun.example.thread;
  * 演示了线程的几种常用的状态
  * 可通过 jstack pid 进行监控
  */
-public class ThreadStateExample {
+public class ExampleThreadState {
     public static void run(String[] args) {
         new Thread(new TimeWaiting(), "TimeWaitingThread").start();
         new Thread(new Waiting(), "WaitingThread").start();

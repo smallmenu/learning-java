@@ -18,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"thread", "worker-thread"};
+        String[] argv = {"advance", "okhttp"};
         args = argv;
 
         if (args.length < 2) {

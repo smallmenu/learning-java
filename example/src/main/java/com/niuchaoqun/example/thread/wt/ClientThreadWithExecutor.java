@@ -23,6 +23,7 @@ public class ClientThreadWithExecutor extends Thread {
                 Thread.sleep(random.nextInt(100));
             }
         } catch (InterruptedException e) {
+
         } catch (RejectedExecutionException e) {
             System.out.println(getName() + " : " + e);
         }

@@ -12,6 +12,7 @@ public class Advance {
 			pd.addClass("gson", GsonExample.class, "gson example");
 			pd.addClass("hash", HashExample.class, "hash example");
 			pd.addClass("slf4j", Slf4jExample.class, "slf4j example");
+			pd.addClass("okhttp", OkhttpExample.class, "slf4j example");
 
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {

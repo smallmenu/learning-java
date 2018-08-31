@@ -8,7 +8,7 @@ package com.niuchaoqun.example.thread;
  * 同步静态方法会使用该类的类对象锁来执行互斥处理
  *
  */
-public class ThreadSyncExample {
+public class ExampleThreadSync {
     public static void run(String[] args) {
         Runnable runnable = new RunnableThread();
         for (int i = 0; i < 10; i++) {

@@ -19,7 +19,7 @@ import java.util.concurrent.CountDownLatch;
  * 30个线程 耗时 7390ms   99%
  * 50个线程 耗时 7358ms   99%
  */
-public class ThreadPoolExample {
+public class ExampleThreadPool {
     // 监控运行状态
     public static CountDownLatch monitor;
 

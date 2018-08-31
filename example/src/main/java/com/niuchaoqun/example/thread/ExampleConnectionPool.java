@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * .awit() 会阻塞当前线程，直到 N 变为 0
  *
  */
-public class ConnectionPoolExample {
+public class ExampleConnectionPool {
     // 初始化具有10个连接的连接池
     static ConnectionPool pool = new ConnectionPool(10);
 
