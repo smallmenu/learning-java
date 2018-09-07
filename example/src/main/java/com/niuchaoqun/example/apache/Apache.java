@@ -17,6 +17,6 @@ public class Apache {
             e.printStackTrace();
         }
 
-        System.exit(exitCode);
+        System.out.println(exitCode);
     }
 }

@@ -18,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"advance", "okhttp"};
+        String[] argv = {"thread", "worker_thread"};
         args = argv;
 
         if (args.length < 2) {
@@ -43,6 +43,6 @@ public class Example {
             e.printStackTrace();
         }
 
-        System.exit(exitCode);
+        System.out.println(exitCode);
     }
 }

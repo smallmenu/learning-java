@@ -21,12 +21,6 @@ public class Thread2Example {
             Thread thread = new Thread(runnable);
             thread.start();
         }
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public static class ExtendThread extends Thread {

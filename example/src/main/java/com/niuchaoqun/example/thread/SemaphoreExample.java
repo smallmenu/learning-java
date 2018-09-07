@@ -24,13 +24,6 @@ public class SemaphoreExample {
         for (int i = 0; i < 10; i++) {
             new UserThread(resource).start();
         }
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public static class BoundedResource {

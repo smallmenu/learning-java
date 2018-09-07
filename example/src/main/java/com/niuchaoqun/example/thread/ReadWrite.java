@@ -29,11 +29,5 @@ public class ReadWrite {
         new ReaderThread(data).start();
         new ReaderThread(data).start();
         new WriterThread(data, "abcdefghijklmnopq").start();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

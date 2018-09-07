@@ -15,11 +15,5 @@ public class ExchangerExample {
         char[] buffer2 = new char[10];
         new ProducerThread(exchanger, buffer1, 1234).start();
         new ConsumerThread(exchanger, buffer2, 2343).start();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

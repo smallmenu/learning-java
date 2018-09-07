@@ -20,11 +20,5 @@ public class ProducerConsumer {
         new EaterThread("EaterThread-2", table, 8473).start();
         new EaterThread("EaterThread-3", table, 3947).start();
         new EaterThread("EaterThread-4", table, 3947).start();
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

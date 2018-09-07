@@ -24,6 +24,6 @@ public class Jdk {
             e.printStackTrace();
         }
 
-        System.exit(exitCode);
+        System.out.println(exitCode);
     }
 }

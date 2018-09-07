@@ -13,12 +13,6 @@ public class ExampleThreadState {
         new Thread(new Blocked(), "BlockedThread-1").start();
         // 获取不到锁，是 BLOCKED 状态
         new Thread(new Blocked(), "BlockedThread-2").start();
-
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     /**

@@ -16,6 +16,6 @@ public class Database {
 			e.printStackTrace();
 		}
 
-		System.exit(exitCode);
+		System.out.println(exitCode);
 	}
 }

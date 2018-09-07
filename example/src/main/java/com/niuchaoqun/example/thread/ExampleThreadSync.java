@@ -22,12 +22,6 @@ public class ExampleThreadSync {
             Thread thread = new Thread(rsyncThread);
             thread.start();
         }
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public static class RunnableThread implements Runnable {

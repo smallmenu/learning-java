@@ -36,10 +36,6 @@ public class ThreadPerMessage2 {
             host.request(10, 'A');
             host.request(20, 'B');
             host.request(30, 'C');
-
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } finally {
             executorService.shutdown();
             System.out.println("main End");

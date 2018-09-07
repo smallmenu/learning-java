@@ -29,11 +29,5 @@ public class ThreadPerMessage1 {
         host.request(20, 'B');
         host.request(30, 'C');
         System.out.println("main End");
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

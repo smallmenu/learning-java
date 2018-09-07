@@ -19,6 +19,6 @@ public class Advance {
 			e.printStackTrace();
 		}
 
-		System.exit(exitCode);
+		System.out.println(exitCode);
 	}
 }

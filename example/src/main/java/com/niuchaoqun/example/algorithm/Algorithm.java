@@ -15,6 +15,6 @@ public class Algorithm {
             e.printStackTrace();
         }
 
-        System.exit(exitCode);
+        System.out.println(exitCode);
     }
 }

@@ -14,18 +14,11 @@ public class Thread1Example {
 
         extendThread();
         runnableThread();
-
-        // 多线程模式下，主线程可能没有等待多线程执行完毕就会结束，所以看不到 print 结果
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void extendThread() {
         // 继承 Thread 类
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             ExtendThread extendThread = new ExtendThread();
             extendThread.setName("e" + i);
             extendThread.start();
@@ -36,7 +29,7 @@ public class Thread1Example {
     public static void runnableThread() {
         // 实现 Runnable 接口
         RunnableThread runnableThread = new RunnableThread();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Thread thread = new Thread(runnableThread, "r" + i);
             thread.start();
         }
@@ -45,14 +38,29 @@ public class Thread1Example {
     public static class ExtendThread extends Thread {
         @Override
         public void run() {
-            System.out.println("ExtendThread:" + getName() + " running");
+            while (true) {
+                System.out.println("ExtendThread:" + getName() + " running");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
     public static class RunnableThread implements Runnable {
         @Override
         public void run() {
-            System.out.println("RunnableThread:" + Thread.currentThread().getName() + " running");
+            while (true) {
+                System.out.println("RunnableThread:" + Thread.currentThread().getName() + " running");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
     }
 }

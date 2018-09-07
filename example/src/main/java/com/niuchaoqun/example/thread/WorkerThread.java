@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
  */
 public class WorkerThread {
     public static void run(String[] args) {
-        threadpool();
+        channel();
     }
 
     public static void channel() {
@@ -22,12 +22,6 @@ public class WorkerThread {
         new ClientThread("Alice", channel).start();
         new ClientThread("Bobby", channel).start();
         new ClientThread("Chris", channel).start();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void threadpool() {
@@ -38,17 +32,12 @@ public class WorkerThread {
             new ClientThreadWithExecutor("Bobby", executorService).start();
             new ClientThreadWithExecutor("Chris", executorService).start();
 
-            Thread.sleep(5000);
+            Thread.sleep(1000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             executorService.shutdown();
-        }
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
