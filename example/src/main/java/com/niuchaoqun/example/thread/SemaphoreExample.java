@@ -49,10 +49,11 @@ public class SemaphoreExample {
 
         }
 
-        // 模拟执行操作
         protected void doUse() throws InterruptedException {
             System.out.println(Thread.currentThread().getName() + " BEGIN used = " + (permits - semaphore.availablePermits()));
+
             Thread.sleep(random.nextInt(500));
+
             System.out.println(Thread.currentThread().getName() + " END used = " + (permits - semaphore.availablePermits()));
         }
     }
@@ -65,6 +66,7 @@ public class SemaphoreExample {
             this.resource = resource;
         }
 
+        @Override
         public void run() {
             try {
                 while (true) {

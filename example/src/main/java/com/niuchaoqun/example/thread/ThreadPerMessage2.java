@@ -2,7 +2,6 @@ package com.niuchaoqun.example.thread;
 
 import com.niuchaoqun.example.thread.tpm.Host2;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
  */
 public class WorkerThread {
     public static void run(String[] args) {
-        channel();
+        threadpool();
     }
 
     public static void channel() {

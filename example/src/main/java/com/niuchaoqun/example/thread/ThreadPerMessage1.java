@@ -6,7 +6,9 @@ import java.util.concurrent.Executors;
 /**
  * Thread-Per-Message 模式（1）
  *
- * ThreadFactory 接口，声明了 newThread 方法，提供了将线程创建抽象化的接口，避免了在 Host1 中 new Thread 的硬编码
+ * ThreadFactory 接口，声明了 newThread 方法，提供了将 *线程创建* 抽象化的接口，避免在 Host1 中 new Thread 的硬编码
+ * 这样我们就可以控制线程的创建
+ *
  * 即：Host1 怎样创建线程，取决于构造函数传入的 ThreadFactory 对象
  *
  */

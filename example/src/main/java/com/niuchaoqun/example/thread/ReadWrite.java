@@ -15,7 +15,7 @@ import com.niuchaoqun.example.thread.readwrite.WriterThread;
  * 适合读取操作繁重
  * 读取频率比写入频率高
  *
- *
+ * @author niuchaoqun
  */
 public class ReadWrite {
     public static void run(String[] args) {

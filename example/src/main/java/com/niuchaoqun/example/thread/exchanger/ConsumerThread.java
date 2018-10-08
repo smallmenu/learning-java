@@ -17,6 +17,7 @@ public class ConsumerThread extends Thread {
         this.random = new Random(seed);
     }
 
+    @Override
     public void run() {
         try {
             while (true) {

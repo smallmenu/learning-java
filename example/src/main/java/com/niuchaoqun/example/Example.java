@@ -18,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"thread", "worker_thread"};
+        String[] argv = {"thread", "countdown"};
         args = argv;
 
         if (args.length < 2) {
@@ -38,11 +38,12 @@ public class Example {
             pd.addClass("algorithm", Algorithm.class, "algorithm example:");
             pd.addClass("database", Database.class, "database example: such as mysql, redis etc. ");
             pd.addClass("apache", Apache.class, "apache common example: such as lang, codec etc. ");
+
             exitCode = pd.run(args, 0);
         } catch (Throwable e) {
             e.printStackTrace();
         }
 
-        System.out.println(exitCode);
+        System.out.println("Example exit " + exitCode);
     }
 }

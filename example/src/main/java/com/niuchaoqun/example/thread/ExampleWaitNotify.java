@@ -35,7 +35,7 @@ import java.time.format.DateTimeFormatter;
  *
  *
  */
-public class ThreadWaitNotifyExample {
+public class ExampleWaitNotify {
     static boolean flag = true;
     static Object lock = new Object();
 

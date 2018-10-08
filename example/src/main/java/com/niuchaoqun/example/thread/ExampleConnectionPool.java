@@ -16,15 +16,22 @@ import java.util.concurrent.atomic.AtomicInteger;
  * .countDown() 调用时，N 会 -1
  * .awit() 会阻塞当前线程，直到 N 变为 0
  *
+ * @author niuchaoqun
  */
 public class ExampleConnectionPool {
-    // 初始化具有10个连接的连接池
+    /**
+     * 初始化具有10个连接的连接池
+     */
     static ConnectionPool pool = new ConnectionPool(10);
 
-    // 保证所有 ConnectionRunner 线程能够同时开始
+    /**
+     * 保证所有 ConnectionRunner 线程能够同时开始
+     */
     static CountDownLatch start = new CountDownLatch(1);
 
-    // main 线程将会等待所有 ConnectionRunner 结束后才能继续执行
+    /**
+     * main 线程将会等待所有 ConnectionRunner 结束后才能继续执行
+     */
     static CountDownLatch end;
 
     public static void run(String[] args) {
