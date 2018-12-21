@@ -14,6 +14,7 @@ public class Advance {
 			pd.addClass("slf4j", Slf4jExample.class, "slf4j example");
 			pd.addClass("okhttp", OkhttpExample.class, "slf4j example");
 			pd.addClass("quartz", QuartzExample.class, "quartz example");
+			pd.addClass("useragent", UseragentExample.class, "useragent example");
 
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {

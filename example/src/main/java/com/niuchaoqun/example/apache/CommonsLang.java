@@ -27,8 +27,6 @@ public class CommonsLang {
     public static void arrayUtil() {
         int[] array = {2, 3, 4, 5};
 
-        System.out.println(ArrayUtils.indexOf(array, 3));
-
         System.out.println(ArrayUtils.toString(array));
 
         System.out.println(ArrayUtils.contains(array, 4));

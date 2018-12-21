@@ -12,6 +12,8 @@ public class Date8Example {
     }
 
     public static void date() {
+
+
         // 本地日期时间
         LocalDateTime now = LocalDateTime.now();
         System.out.println(now);
@@ -34,7 +36,7 @@ public class Date8Example {
         System.out.println(ymd1);
         System.out.println(ymd2);
 
-        // 字符串解析
+        // 字符串解析与格式转换
         String dt = "2017年04月07日 16时30分47秒";
         LocalDateTime pdt = LocalDateTime.parse(dt, DateTimeFormatter.ofPattern("yyyy年MM月dd日 HH时mm分ss秒"));
         System.out.println(pdt);
@@ -59,15 +61,24 @@ public class Date8Example {
         System.out.println(timestamp3);
 
         // 字符串与时间戳互转
-        long timstamp_in = 1491582600;
+        // 会有时区的问题，通过 ZoneOffset 或 ZoneId 来进行转换
+        long timstamp_in = timestamp3;
         String format = "yyyy-MM-dd HH:mm:ss";
-        LocalDateTime local_in = LocalDateTime.ofEpochSecond(timstamp_in, 0, ZoneOffset.UTC);
-        String timeString = local_in.format(DateTimeFormatter.ofPattern(format));
-        System.out.println(timeString);
+        LocalDateTime local_in1 = LocalDateTime.ofEpochSecond(timstamp_in, 0, ZoneOffset.UTC);
+        LocalDateTime local_in2 = LocalDateTime.ofEpochSecond(timstamp_in, 0, ZoneOffset.ofHours(8));
+        LocalDateTime local_in3 = LocalDateTime.ofInstant(Instant.ofEpochSecond(timstamp_in), ZoneId.systemDefault());
+        String timeString1 = local_in1.format(DateTimeFormatter.ofPattern(format));
+        String timeString2 = local_in2.format(DateTimeFormatter.ofPattern(format));
+        String timeString3 = local_in3.format(DateTimeFormatter.ofPattern(format));
+        System.out.println(timeString1);
+        System.out.println(timeString2);
+        System.out.println(timeString3);
 
-        LocalDateTime local_out = LocalDateTime.parse(timeString, DateTimeFormatter.ofPattern(format));
-        long timstamp_out = local_out.toInstant(ZoneOffset.UTC).getEpochSecond();
-        System.out.println(timstamp_out);
+        LocalDateTime local_out = LocalDateTime.parse(timeString1, DateTimeFormatter.ofPattern(format));
+        long timstamp_out1 = local_out.atZone(ZoneId.systemDefault()).toEpochSecond();
+        long timstamp_out2 = local_out.toInstant(ZoneOffset.ofHours(8)).getEpochSecond();
+        System.out.println(timstamp_out1);
+        System.out.println(timstamp_out2);
 
         System.out.println("----- format -----");
     }
