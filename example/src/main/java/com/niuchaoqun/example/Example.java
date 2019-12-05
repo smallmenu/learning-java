@@ -18,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"jdk", "date8"};
+        String[] argv = {"algorithm", "test-contain"};
         args = argv;
 
         if (args.length < 2) {

@@ -9,6 +9,7 @@ public class Algorithm {
         ExampleDriver pd = new ExampleDriver();
         try {
             pd.addClass("sort", SortExample.class, "sort example");
+            pd.addClass("test-contain", TestContainExample.class, "test contain example");
 
             exitCode = pd.run(args, 1);
         } catch (Throwable e) {
