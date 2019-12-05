@@ -14,10 +14,9 @@ public class SortExample {
     /**
      * 冒泡排序，稳定
      * 时间 O(n^2)，空间 O(1)
-     *
+     * <p>
      * 通过交换相邻值，每次排出最小的
      * 通过设置flag，该轮无交换，提前结束循环
-     *
      */
     public static void bubble() {
         int[] list = new int[source.length];
@@ -27,10 +26,10 @@ public class SortExample {
         for (int i = 0; i < list.length; i++) {
             boolean flag = false;
             for (int j = list.length - 1; j >= i + 1; j--) {
-                if (list[j] < list[j-1]) {
+                if (list[j] < list[j - 1]) {
                     temp = list[j];
-                    list[j] = list[j-1];
-                    list[j-1] = temp;
+                    list[j] = list[j - 1];
+                    list[j - 1] = temp;
                     flag = true;
                 }
                 System.out.println(Arrays.toString(list));
@@ -47,7 +46,7 @@ public class SortExample {
     /**
      * 选择排序，不稳定
      * 时间 O(n^2)，空间 O(1)
-     *
+     * <p>
      * 每次先找出最小值，与队首交换，稍微优势的地方是每次只要交换一次
      */
     public static void select() {
@@ -78,7 +77,7 @@ public class SortExample {
     /**
      * 插入排序
      * 时间 O(n^2)，空间 O(1)
-     *
+     * <p>
      * 相当于两个指针一起移动，每次把后面小的数据，再前面已经排好序的数据中找到位置插入进去
      */
     public static void insert() {
@@ -88,10 +87,10 @@ public class SortExample {
         int temp;
         for (int i = 1; i < list.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
-                if (list[j+1] < list[j]) {
+                if (list[j + 1] < list[j]) {
                     temp = list[j];
-                    list[j] = list[j+1];
-                    list[j+1] = temp;
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
                 }
                 System.out.println(Arrays.toString(list));
             }

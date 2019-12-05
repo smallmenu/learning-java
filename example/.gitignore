@@ -21,6 +21,6 @@ hs_err_pid*
 
 /target/
 /data/
-log4j.log
+log4j.log*
 *-log.txt
 datacommon-io.txt
