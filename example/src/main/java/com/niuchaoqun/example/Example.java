@@ -18,7 +18,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"algorithm", "test-contain"};
+        String[] argv = {"advance", "js"};
         args = argv;
 
         if (args.length < 2) {
