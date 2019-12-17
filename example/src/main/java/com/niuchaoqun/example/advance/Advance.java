@@ -10,11 +10,13 @@ public class Advance {
 		try {
 			pd.addClass("fastjson", FastjsonExample.class, "fastjson example");
 			pd.addClass("gson", GsonExample.class, "gson example");
+			pd.addClass("jackson", JacksonExample.class, "jackson example");
 			pd.addClass("hash", HashExample.class, "hash example");
 			pd.addClass("slf4j", Slf4jExample.class, "slf4j example");
 			pd.addClass("okhttp", OkhttpExample.class, "slf4j example");
 			pd.addClass("quartz", QuartzExample.class, "quartz example");
 			pd.addClass("useragent", UseragentExample.class, "useragent example");
+			pd.addClass("lombok", LombokExample.class, "lombok example");
             pd.addClass("js", JsExample.class, "js example");
 
 			exitCode = pd.run(args, 1);
