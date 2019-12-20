@@ -48,7 +48,7 @@ public class FastjsonExample {
 		}
 		System.out.println("=====");
 
-		// [1,"2"]
+		// 不规范的Json字符串： [1,"2"]
 		JSONArray jsonA1 = new JSONArray();
 		jsonA1.add(1);
 		jsonA1.add("2");
@@ -61,7 +61,7 @@ public class FastjsonExample {
 		}
 		System.out.println("=====");
 
-		// [1,"2",{"age":10,"name":"zhang"},{"age":11,"name":"li"}]
+		// 不规范的Json字符串： [1,"2",{"age":10,"name":"zhang"},{"age":11,"name":"li"}]
 		// Fastjson 能很好的处理这种情况，不需要额外的class
 		JSONArray jsonA2 = new JSONArray();
 		JSONObject jsonO1 = new JSONObject();
@@ -77,6 +77,11 @@ public class FastjsonExample {
 		String jsonCollection = JSON.toJSONString(jsonA2);
 		System.out.println(jsonCollection);
 
+
+		/**
+		 * Json 解析
+		 * 可以解析为内置对象 JSONObject
+		 */
 		JSONArray pa2 = JSON.parseArray(jsonCollection);
 		int one = (int) pa2.get(0);
 		String two = (String) pa2.get(1);

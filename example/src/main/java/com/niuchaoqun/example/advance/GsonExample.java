@@ -18,7 +18,7 @@ import com.niuchaoqun.example.ResponseData;
 import com.niuchaoqun.example.User;
 
 public class GsonExample {
-	
+
 	public static void run(String[] args) {
 
 		simpleExample();
@@ -47,7 +47,7 @@ public class GsonExample {
 		System.out.println("=====");
 
 		// Collection {"k1":"v1","k2":"v2","k3":"v3"}
-		HashMap<String, String> map = new HashMap<String, String>();
+		HashMap<String, String> map = new HashMap<>();
 		map.put("k1", "中文");
 		map.put("k2", "v2");
 		map.put("k3", "v3");
@@ -62,8 +62,8 @@ public class GsonExample {
 		}
 		System.out.println("=====");
 
-		// Collection [1,"2",{"name":"zhang","age":10},{"name":"li","age":11}]
-		// 并不建议的做法
+		// 不规范的Json字符串： [1,"2",{"name":"zhang","age":10},{"name":"li","age":11}]
+		// 并不建议的做法，Gson 必须得有一个 Bean
 		@SuppressWarnings("rawtypes")
 		Collection collection = new ArrayList();
 		collection.add(1);
@@ -73,7 +73,10 @@ public class GsonExample {
 		String jsonCollection = gson.toJson(collection);
 		System.out.println(jsonCollection);
 
-		// decode is difficult
+		/**
+		 * Json 解析
+		 * 有点麻烦
+		 */
 		JsonArray jsonArray = parser.parse(jsonCollection).getAsJsonArray();
 		int one = jsonArray.get(0).getAsInt();
 		String two = jsonArray.get(1).getAsString();
