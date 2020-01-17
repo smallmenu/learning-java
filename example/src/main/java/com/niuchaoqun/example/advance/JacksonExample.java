@@ -2,6 +2,7 @@ package com.niuchaoqun.example.advance;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -184,21 +185,30 @@ public class JacksonExample {
              *
              * new ObjectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
              *
-             * 有两种情况：
-             * 1. json 多了 Bean 中定义的字段（不受影响）
-             * 2. json 少了 Bean 中定义的字段（会被映射会 Null），否则会抛出异常
-             *
              * 等同于 @JsonIgnoreProperties(ignoreUnknown = true)
+             *
+             * 两种情况：
+             * 1. json 中多了 Bean 中未定义的字段，会报 Unrecognized field 异常
+             * 2. json 中少了 Bean 中已定义的字段 （不受影响，会被映射会 Null）
+             *
              */
-            String json1 = "{\"id\":2,\"name\":\"张三\",\"title\":\"标题\", \"desc\":\"摘要\"}";
-            JacksonObject jacksonObjectDecode2 = mapper.readValue(json1, JacksonObject.class);
-            System.out.println(jacksonObjectDecode2);
+            // String json1 = "{\"id\":2,\"name\":\"张三\",\"title\":\"标题\", \"desc\":\"摘要\"}";
+            //             // JacksonObject jacksonObjectDecode2 = mapper.readValue(json1, JacksonObject.class);
+            //             // System.out.println(jacksonObjectDecode2);
 
-            String json2 = "{\"id\":2,\"name\":\"张三\"}";
+            String json2 = "{\"id\":2,\"name\":\"张三\", \"a\":\"b\"}";
             JacksonObject jacksonObjectDecode3 = mapper.readValue(json2, JacksonObject.class);
             System.out.println(jacksonObjectDecode3);
+
+            /**
+             * 映射为 Bean 数组，通过 TypeReference 实现。
+             */
+            String json3 = "[{\"id\":2,\"name\":\"张三\"},{\"id\":3,\"name\":\"李四\"}]";
+            List<JacksonObject> jacksonObjects = mapper.readValue(json3, new TypeReference<List<JacksonObject>>() {
+            });
+            System.out.println(jacksonObjects);
         } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
+            e.printStackTrace();
         }
     }
 
