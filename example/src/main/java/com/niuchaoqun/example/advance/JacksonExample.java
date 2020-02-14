@@ -1,5 +1,6 @@
 package com.niuchaoqun.example.advance;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.niuchaoqun.example.advance.jackson.JacksonBean;
 import com.niuchaoqun.example.advance.jackson.JacksonObject;
+import com.niuchaoqun.example.advance.lombok.UserJson;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -19,15 +21,26 @@ public class JacksonExample {
     private static ObjectMapper mapper = new ObjectMapper();
 
     public static void run(String[] args) {
+        lombokExample();
         simpleExample();
         jsonDecode();
         jsonObject();
         jdk8();
     }
 
+    public static void lombokExample() {
+        try {
+            UserJson userJson = UserJson.builder().id(1).name("").build();
+            String json = mapper.writeValueAsString(userJson);
+            System.out.println(json);
+            UserJson user = mapper.readValue(json, UserJson.class);
+            System.out.println(user);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void simpleExample() {
-
-
         try {
             int[] ints1 = {1, 2, 3};
             String intJson = mapper.writeValueAsString(ints1);
@@ -188,7 +201,7 @@ public class JacksonExample {
              * 等同于 @JsonIgnoreProperties(ignoreUnknown = true)
              *
              * 两种情况：
-             * 1. json 中多了 Bean 中未定义的字段，会报 Unrecognized field 异常
+             * 1. json 中多了 Bean 中未定义的字段，会报 Unrecognized field 异常，
              * 2. json 中少了 Bean 中已定义的字段 （不受影响，会被映射会 Null）
              *
              */
