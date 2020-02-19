@@ -28,6 +28,11 @@ import lombok.*;
  *
  * @Builder.Default
  * 指定建造者模式的默认值，否则未初始化的值默认是 null
+ *
+ * @Notice
+ * Lombok 1.18.X 引入了一个不兼容的变更（为了兼容 Java 9 的 Module）
+ * 当我们同时使用 @Data 与 @Builder 时， Jackson 反序列化时会报错，
+ * 解决：额外添加 @NoArgsConstructor, @AllArgsConstructor 注解
  */
 @Data
 @Builder

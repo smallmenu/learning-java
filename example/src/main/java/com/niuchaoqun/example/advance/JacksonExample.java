@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.niuchaoqun.example.advance.jackson.JacksonBean;
 import com.niuchaoqun.example.advance.jackson.JacksonObject;
+import com.niuchaoqun.example.advance.lombok.UserChildBuilder;
 import com.niuchaoqun.example.advance.lombok.UserJson;
 
 import java.io.IOException;
@@ -35,6 +36,13 @@ public class JacksonExample {
             System.out.println(json);
             UserJson user = mapper.readValue(json, UserJson.class);
             System.out.println(user);
+
+            UserChildBuilder userChild = UserChildBuilder.builder().id(1).name("名字").age(1).build();
+            String userChildJson = mapper.writeValueAsString(userChild);
+            System.out.println(userChildJson);
+            UserChildBuilder userChildResult = mapper.readValue(userChildJson, UserChildBuilder.class);
+            System.out.println(userChildResult);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
