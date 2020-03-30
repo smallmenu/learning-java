@@ -8,6 +8,7 @@ package com.niuchaoqun.example.thread;
  */
 public class ExampleThreadLocal {
     private static final ThreadLocal<Long> TIME_THREADLOCAL = new ThreadLocal<Long>() {
+        @Override
         protected Long initialValue() {
             return System.currentTimeMillis();
         }
