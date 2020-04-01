@@ -36,7 +36,7 @@ public class RandomExample {
         System.out.println("----- Random3 -----");
 
 
-        // 加强型的随机数，buke还可以通过特定的算法初始化
+        // 加强型的随机数，还可以通过特定的算法初始化
         SecureRandom random4 = new SecureRandom();
         for (int i = 0; i < 10; i++) {
             System.out.println(random4.nextInt(1000));

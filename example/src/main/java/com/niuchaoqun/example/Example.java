@@ -8,17 +8,20 @@ import com.niuchaoqun.example.basic.Basic;
 import com.niuchaoqun.example.database.Database;
 import com.niuchaoqun.example.jdk.Jdk;
 import com.niuchaoqun.example.thread.Threads;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+/**
+ * Example 启动器
+ *
+ * @author niuchaoqun
+ */
+@Slf4j
 public class Example {
-
-    private static final Logger log = LoggerFactory.getLogger(Example.class);
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"advance", "jackson"};
+        String[] argv = {"basic", "array"};
         args = argv;
 
         if (args.length < 2) {
@@ -31,13 +34,16 @@ public class Example {
         ExampleDriver pd = new ExampleDriver();
 
         try {
-            pd.addClass("basic", Basic.class, "basic example:");
-            pd.addClass("thread", Threads.class, "thread example:");
-            pd.addClass("jdk", Jdk.class, "jdk example:");
+            // Java 基础示例
+            pd.addClass("basic", Basic.class, "Java Basic Example:");
+            // Java JDK 示例
+            pd.addClass("jdk", Jdk.class, "Java Jdk Example:");
+
             pd.addClass("advance", Advance.class, "advance group:");
             pd.addClass("algorithm", Algorithm.class, "algorithm example:");
             pd.addClass("database", Database.class, "database example: such as mysql, redis etc. ");
             pd.addClass("apache", Apache.class, "apache common example: such as lang, codec etc. ");
+            pd.addClass("thread", Threads.class, "thread example:");
 
             exitCode = pd.run(args, 0);
         } catch (Throwable e) {

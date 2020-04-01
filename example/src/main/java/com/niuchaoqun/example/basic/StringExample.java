@@ -1,5 +1,10 @@
 package com.niuchaoqun.example.basic;
 
+/**
+ * Java 字符串
+ *
+ * @author niuchaoqun
+ */
 public class StringExample {
 
     public static void run(String[] args) {
@@ -15,25 +20,28 @@ public class StringExample {
         String string1 = "name";
         String string2 = "name";
 
-        // String 对象，引用赋值，string3与string4相同
+        // String 对象，默认为引用赋值，string3与string4相同
         String string3 = new String("name");
         String string4 = string3;
 
+        // 比较字符串对象
         System.out.println(string1 == string2);
         System.out.println(string1 == string3);
         System.out.println(string3 == string4);
+
+        // 比较字符串值
         System.out.println(string1.equals(string3));
         System.out.println(string1.equalsIgnoreCase(string3));
 
         // 判断是否等于字符串更严谨的写法，可避免空指针异常
         System.out.println("name".equals(string3));
-        System.out.println("----- string -----");
+        System.out.println("----------");
     }
 
     public static void empty() {
         String string1 = "abc";
 
-        // 判断空。检查字符串长度，可能有空指针异常，一般使用 "".equals()
+        // 判断空。不推荐。检查字符串长度，可能有空指针异常，一般使用 "".equals()
         boolean empty = string1.isEmpty();
         System.out.println(empty);
 
@@ -47,17 +55,18 @@ public class StringExample {
         }
 
         // 更严谨的判断
-        // 这样判断有点狗屎，可以借助 StringUtils.isEmpty() 或 StringUtils.equals(a, "") 简化
+        // 这样判断实在是有点狗屎，一般借助 StringUtils.isEmpty() 或 StringUtils.equals(a, "") 来简化
         if (nullString != null && !"".equals(nullString)) {
             if (nullString.endsWith("c")) {
                 System.out.println(nullString);
             }
         }
 
-        System.out.println("----- empty -----");
+        System.out.println("----------");
     }
 
     public static void function() {
+        // 内置的字符串的函数，不能避免 Null，实际一般使用Commons StringUtils 来替代
         String string1 = "hello";
         String string2 = "world";
         String string3 = "hello，中国.";
@@ -93,7 +102,7 @@ public class StringExample {
         boolean contain = string1.contains("ll");
         System.out.println(contain);
 
-        // 字符串长度，中英文长度和标点都是1
+        // 字符串长度，中、英文、标点的长度都是 1
         int length1 = string1.length();
         int length2 = string3.length();
         System.out.println(length1);
@@ -106,10 +115,11 @@ public class StringExample {
         // 转换大写
         System.out.println(string1.toUpperCase());
 
-        System.out.println("----- function -----");
+        System.out.println("----------");
     }
 
     public static void StringBufferExample() {
+        // StringBuffer 是线程安全的
         StringBuffer buffer = new StringBuffer();
 
         // 字符串连接
@@ -125,15 +135,16 @@ public class StringExample {
         String reverse = buffer.reverse().toString();
         System.out.println(reverse);
 
-        System.out.println("----- StringBuffer -----");
+        System.out.println("----------");
     }
 
     public static void StringBuilderExample() {
-        // StringBuilder 功能与 StringBuffer 类似，但是不支持多线程所以性能更好
+        // StringBuilder 非线程安全，功能与 StringBuffer 类似，性能更好
+        // 一般情况下 Java 编译会自动优化字符串连接，StringBuffer 和 StringBuilder 主要是为了避免大量的字符串连接（循环中），
         StringBuilder builder = new StringBuilder();
         builder.append("Hello");
         System.out.println(builder);
 
-        System.out.println("----- StringBuilder -----");
+        System.out.println("----------");
     }
 }

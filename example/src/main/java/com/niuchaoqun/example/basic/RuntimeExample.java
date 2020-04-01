@@ -2,6 +2,11 @@ package com.niuchaoqun.example.basic;
 
 import java.io.IOException;
 
+/**
+ * Java Runtime 类
+ *
+ * @author niuchaoqun
+ */
 public class RuntimeExample {
 
 	public static void run(String[] args) {
@@ -24,20 +29,21 @@ public class RuntimeExample {
 		}
 		System.out.println("----- Memory -----");
 
-		// 手动GC
+		// 手动GC，不一定有用。
 		System.out.println(runtime.freeMemory());
 		System.out.println(runtime.totalMemory());
 		runtime.gc();
 		System.out.println(runtime.freeMemory());
 		System.out.println(runtime.totalMemory());
 
-		// 执行外部程序
+		// 执行外部程序，如执行 .exe
 		try {
 			Process exec = runtime.exec("");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// 加载外部动态库
+
+		// 加载外部动态库，如加载 .so
 		runtime.load("");
 	}
 }

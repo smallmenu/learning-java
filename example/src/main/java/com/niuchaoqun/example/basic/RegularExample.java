@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Java 正则表达式
+ *
+ * @author niuchaoqun
+ */
 public class RegularExample {
     public static void run(String[] args) {
 

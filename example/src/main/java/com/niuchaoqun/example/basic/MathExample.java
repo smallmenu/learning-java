@@ -1,5 +1,10 @@
 package com.niuchaoqun.example.basic;
 
+/**
+ * Java Math 类
+ *
+ * @author niuchaoqun
+ */
 public class MathExample {
     public static void run(String[] args) {
         int a = 5;

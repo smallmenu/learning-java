@@ -1,16 +1,20 @@
 package com.niuchaoqun.example.basic;
 
-
+/**
+ * Java 基本类型
+ *
+ * @author niuchaoqun
+ */
 public class TypeExample {
     public static void run(String[] args) {
         // long 8字节
-        long ilong;
+        long l = 0L;
 
         // int 4字节
-        int iint;
+        int i = 0;
 
         // short 2字节
-        short ishort;
+        short s = 0;
 
         // byte 1字节
         byte b;
@@ -22,17 +26,18 @@ public class TypeExample {
         double d;
 
         // 包装类
-        long maxl = Long.MAX_VALUE;
-        int maxi = Integer.MAX_VALUE;
-        byte maxb = Byte.MAX_VALUE;
-        int isize = Integer.SIZE;
+        long maxLong = Long.MAX_VALUE;
+        int maxInt = Integer.MAX_VALUE;
+        byte maxByte = Byte.MAX_VALUE;
+        int intSize = Integer.SIZE;
 
-        System.out.println(maxl);
-        System.out.println(maxi);
-        System.out.println(maxb);
+        System.out.println(maxLong);
+        System.out.println(maxInt);
+        System.out.println(maxByte);
 
-        // 存储位数
-        System.out.println(isize);
+        // Integer 类型存储位数
+        System.out.println(intSize);
+        System.out.println("----- line -----");
 
         // 字符类型，2字节，属于整型的一种
         char ch1 = 'a';
@@ -42,39 +47,47 @@ public class TypeExample {
         System.out.println(ch1);
         System.out.println(ch2);
         System.out.println(ch3);
+        System.out.println("----- line -----");
 
         // bool
         boolean flag = true;
         System.out.println(flag);
+        System.out.println("----- line -----");
 
         // 自动转换
-        short ta = 127;
-        int tb = ta;
-        System.out.println(tb);
+        short sVal = 127;
+        int iVal = sVal;
+        System.out.println(iVal);
         // 强制转换，常量计算使用强制类型转换，输出：3.3333333
-        System.out.println((float)10/3);
+        System.out.println((float) 10 / 3);
+        System.out.println("----- line -----");
 
-        // 任何类型的数据都向String转型，输出：test30
-        String test = "test";
-        int x = 30;
-        System.out.println(x + test);
+        // Java 中任何类型的数据都向String转型，输出：test30
+        String testString = "test";
+        int ix = 30;
+        System.out.println(ix + testString);
+        System.out.println("----- line -----");
 
         // char 数组到 String 互转
-        char data[] = {'a', 'b', 'c'};
-        String s = new String(data);
-        final char[] css = s.toCharArray();
-        System.out.println(s);
+        char charArray[] = {'a', 'b', 'c'};
+        String string = new String(charArray);
+        final char[] toCharArray = string.toCharArray();
+        System.out.println(string);
+        System.out.println(toCharArray);
+        System.out.println("----- line -----");
 
         // 字符串转整型，返回对象不同，一个是基础类型一个是包装类
-        int i = Integer.parseInt("0123");
-        final Integer integer = Integer.valueOf("0123");
-        System.out.println(i);
+        int intValue1 = Integer.parseInt("0123");
+        final Integer intValue2 = Integer.valueOf("0123");
+        System.out.println(intValue1);
+        System.out.println(intValue2);
 
         // bytes 数组与 String 互转
         String byteString1 = "bytes";
-        byte[] bytes = byteString1.getBytes();
+        byte[] byteArray = byteString1.getBytes();
+        System.out.println(byteArray);
 
-        String byteString2 = new String(bytes);
+        String byteString2 = new String(byteArray);
         System.out.println(byteString2);
     }
 }
