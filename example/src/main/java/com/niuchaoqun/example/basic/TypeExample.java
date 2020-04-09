@@ -29,14 +29,22 @@ public class TypeExample {
         long maxLong = Long.MAX_VALUE;
         int maxInt = Integer.MAX_VALUE;
         byte maxByte = Byte.MAX_VALUE;
+
+        // 类型存储位数
         int intSize = Integer.SIZE;
+        int longSize = Long.SIZE;
+        int floatSize = Float.SIZE;
+        int doubleSize = Double.SIZE;
 
         System.out.println(maxLong);
         System.out.println(maxInt);
         System.out.println(maxByte);
+        System.out.println("----- line -----");
 
-        // Integer 类型存储位数
         System.out.println(intSize);
+        System.out.println(longSize);
+        System.out.println(floatSize);
+        System.out.println(doubleSize);
         System.out.println("----- line -----");
 
         // 字符类型，2字节，属于整型的一种
@@ -50,8 +58,10 @@ public class TypeExample {
         System.out.println("----- line -----");
 
         // bool
-        boolean flag = true;
-        System.out.println(flag);
+        boolean boolFlag1 = true;
+        Boolean boolFlag2 = true;
+        System.out.println(boolFlag1);
+        System.out.println(boolFlag2);
         System.out.println("----- line -----");
 
         // 自动转换
@@ -62,7 +72,7 @@ public class TypeExample {
         System.out.println((float) 10 / 3);
         System.out.println("----- line -----");
 
-        // Java 中任何类型的数据都向String转型，输出：test30
+        // Java 中任何类型的数据都向 String 转型，输出：test30
         String testString = "test";
         int ix = 30;
         System.out.println(ix + testString);
@@ -78,14 +88,14 @@ public class TypeExample {
 
         // 字符串转整型，返回对象不同，一个是基础类型一个是包装类
         int intValue1 = Integer.parseInt("0123");
-        final Integer intValue2 = Integer.valueOf("0123");
+        Integer intValue2 = Integer.valueOf("0123");
         System.out.println(intValue1);
         System.out.println(intValue2);
 
         // bytes 数组与 String 互转
         String byteString1 = "bytes";
         byte[] byteArray = byteString1.getBytes();
-        System.out.println(byteArray);
+        System.out.println(byteArray.toString());
 
         String byteString2 = new String(byteArray);
         System.out.println(byteString2);

@@ -21,7 +21,7 @@ public class Example {
 
     public static void main(String[] args) {
         // just for debug
-        String[] argv = {"basic", "array"};
+        String[] argv = {"basic", "reference"};
         args = argv;
 
         if (args.length < 2) {
@@ -50,6 +50,6 @@ public class Example {
             e.printStackTrace();
         }
 
-        System.out.println("Example exit " + exitCode);
+        System.out.println("SubExample exit with " + exitCode);
     }
 }

@@ -16,6 +16,7 @@ public class Basic {
 			pd.addClass("random", RandomExample.class, "random and number example");
 			pd.addClass("runtime", RuntimeExample.class, "runtime example");
 			pd.addClass("system", SystemExample.class, "system example");
+			pd.addClass("reference", ReferenceExample.class, "reference example");
 
 			exitCode = pd.run(args, 1);
 		} catch (Throwable e) {
