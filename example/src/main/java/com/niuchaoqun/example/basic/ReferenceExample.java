@@ -1,9 +1,9 @@
 package com.niuchaoqun.example.basic;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 /**
  * Java 对象引用值传递
