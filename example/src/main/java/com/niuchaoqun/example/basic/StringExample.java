@@ -55,7 +55,7 @@ public class StringExample {
         }
 
         // 更严谨的判断
-        // 这样判断实在是有点狗屎，一般借助 StringUtils.isEmpty() 或 StringUtils.equals(a, "") 来简化
+        // 这样判断实在是有点狗屎，可借助 StringUtils.isEmpty() 或 StringUtils.equals(a, "") 来简化
         if (nullString != null && !"".equals(nullString)) {
             if (nullString.endsWith("c")) {
                 System.out.println(nullString);
